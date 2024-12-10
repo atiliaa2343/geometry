@@ -24,6 +24,7 @@ public class RectangularPrism extends Geometry3D {
 	 * @return The volume of the cube.
 	 */
 	@Override
+	public
 	double volume() {
 		return l * w * h;
 	}
@@ -34,6 +35,7 @@ public class RectangularPrism extends Geometry3D {
 	 * @return The surface area of the cube.
 	 */
 	@Override
+	public
 	double surfaceArea() {
 		// TODO Auto-generated method stub
 		return 2 * (l * w + l * h + h * w);
