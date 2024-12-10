@@ -37,30 +37,7 @@ public class LinkedList<T> {
         items.add(item);
     }
 
-    /**
-     * Removes an element from the list.
-     * 
-     * @param item the element to be removed
-     */
-    public void remove(T item) {
-        items.remove(item);
-    }
     
-    /**
-     * Finds an element in the list.
-     * 
-     * @param item the element to find
-     * @return the found element, or {@code null} if the element is not in the list
-     */
-
-    public T find(T item) {
-        for (T i : items) {
-            if (i.equals(item)) {
-                return i;
-            }
-        }
-        return null;
-    }
 
     /**
      * Prints all elements in the list to the standard output.

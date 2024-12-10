@@ -3,25 +3,25 @@ package geometry;
 import java.util.Scanner;
 
 /**
-* Main class for the Geometry Program.
-* 
-* This class implements a command-line REPL interface
-* that allows users to:
-* 1. Add 2D and 3D geometries.
-* 2. View all added geometries.
-* 3. Remove geometries (functionality not yet implemented).
-* 4. Exit the program.
-* 
-* The program interacts with the user to gather data about geometric shapes,
-* stores the shapes in linked lists, and displays their details on request.
-*/
+ * Main class for the Geometry Program.
+ * 
+ * This class implements a command-line REPL interface
+ * that allows users to:
+ * 1. Add 2D and 3D geometries.
+ * 2. View all added geometries.
+ * 3. Remove geometries.
+ * 4. Find geometries by specific attributes.
+ * 5. Exit the program.
+ * 
+ * The program interacts with the user to gather data about geometric shapes,
+ * stores the shapes in linked lists, and displays their details on request.
+ */
 public class Main {
-	
-	
-	 /**
+
+    /**
      * The entry point of the program.
      * 
-     * @param args Command-line arguments 
+     * @param args Command-line arguments
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -35,8 +35,9 @@ public class Main {
             System.out.println("1. Add 2D Geometry");
             System.out.println("2. Add 3D Geometry");
             System.out.println("3. Remove Geometry");
-            System.out.println("4. View All Geometries");
-            System.out.println("5. Exit");
+            System.out.println("4. Find Geometry");
+            System.out.println("5. View All Geometries");
+            System.out.println("6. Exit");
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -54,9 +55,6 @@ public class Main {
                             geometries2D.add(rectangle);
                             System.out.println("Added: " + rectangle);
                         }
-                        // Add similar messages for other cases
-                    
-
                         case 2 -> {
                             System.out.print("Enter radius: ");
                             double radius = scanner.nextDouble();
@@ -75,6 +73,7 @@ public class Main {
                             geometries2D.add(triangle);
                             System.out.println("Added: " + triangle);
                         }
+                        default -> System.out.println("Invalid 2D geometry option.");
                     }
                 }
                 case 2 -> {
@@ -87,7 +86,6 @@ public class Main {
                             Sphere sphere = new Sphere(radius);
                             geometries3D.add(sphere);
                             System.out.println("Added: " + sphere);
-                        
                         }
                         case 2 -> {
                             System.out.print("Enter base, height, and length: ");
@@ -98,18 +96,17 @@ public class Main {
                             geometries3D.add(triangularPrism);
                             System.out.println("Added: " + triangularPrism);
                         }
+                        default -> System.out.println("Invalid 3D geometry option.");
                     }
                 }
+               
                 case 3 -> {
-                    System.out.println("Removing functionality not implemented yet.");
-                }
-                case 4 -> {
                     System.out.println("\n2D Geometries:");
                     geometries2D.printAll();
                     System.out.println("\n3D Geometries:");
                     geometries3D.printAll();
                 }
-                case 5 -> {
+                case 4 -> {
                     System.out.println("Exiting program.");
                     scanner.close();
                     return;
@@ -119,3 +116,5 @@ public class Main {
         }
     }
 }
+
+
