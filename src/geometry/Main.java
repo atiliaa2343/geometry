@@ -34,10 +34,8 @@ public class Main {
             System.out.println("\nOptions: ");
             System.out.println("1. Add 2D Geometry");
             System.out.println("2. Add 3D Geometry");
-            System.out.println("3. Remove Geometry");
-            System.out.println("4. Find Geometry");
-            System.out.println("5. View All Geometries");
-            System.out.println("6. Exit");
+            System.out.println("3. View All Geometries");
+            System.out.println("4. Exit");
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
